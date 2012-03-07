@@ -1,0 +1,360 @@
+
+<html> 
+
+<head> 
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+
+<title>Test Map for Android</title> 
+<style type="text/css">
+      .infoBox {
+        background: url('blueinfowindow.png');
+        border: none;
+        position: absolute;
+        padding-left: 20px;
+        padding-top: 10px;
+       }
+       .phoneytext {
+        text-shadow: 0 -1px 0 #000;
+        color: #fff;
+        font-family: Helvetica Neue, Helvetica, arial;
+        font-size: 18px;
+        line-height: 25px;
+        padding: 4px 45px 4px 15px;
+        font-weight: bold;
+        background: url(arrow.png) 95% 50% no-repeat;
+      }
+      .phoney {
+        background: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(112,112,112)),color-stop(0.51, rgb(94,94,94)),color-stop(0.52, rgb(57,57,57)));
+        background: -moz-linear-gradient(center top,rgb(112,112,112) 0%,rgb(94,94,94) 51%,rgb(57,57,57) 52%);
+      }
+    </style>
+<script type="text/javascript"> 
+      var script = '<script type="text/javascript" src="infobubble';
+      if (document.location.search.indexOf('compiled') !== -1) {
+        script += '-compiled';
+      }
+      script += '.js"><' + '/script>';
+      document.write(script);
+</script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript" src="TrackMath.js"></script> 
+<script type="text/javascript"> 
+
+  var map;
+var icons = [];
+var mgr;
+var infowindow;
+var selectedSite,currentMarker;
+var infoBubble ,infoBubble2;
+var ckToPszLines =null;//移动的虚线 仓库到配送站
+var pszToCustomerLines = null ;//移动的虚线 配送站到客户
+var carMovedMarker = null;//移动的小车车图标
+var  customerHtml ;
+var  pszhHtml;
+var ckHtml;
+var androidVerion ;//android的版本号 解决x10 1.6版本 GMarker不能算定义图片问题
+
+   	//新加提示框
+	infoBubble = new InfoBubble({
+          content: '<div class="phoneytext">Some label</div>',
+          shadowStyle: 1,
+          padding: 0,
+          backgroundColor: 'rgb(57,57,57)',
+          borderRadius: 4,
+          arrowSize: 10,
+          borderWidth: 1,
+          borderColor: '#2c2c2c',
+          disableAutoPan: true,
+          hideCloseButton: true,
+          arrowPosition: 30,
+          backgroundClassName: 'phoney',
+          arrowStyle: 2
+        });
+        infoBubble2 = new InfoBubble({
+          maxWidth: 250,
+          maxHeight: 200
+        });
+  function initialize() {
+
+    var latitude = 0;
+
+    var longitude = 0;
+
+    if (window.android){
+
+      latitude = window.android.getLatitude();
+
+      longitude = window.android.getLongitude();
+
+    }
+
+    var myLatlng = new google.maps.LatLng(latitude,longitude);
+
+    var myOptions = {
+
+      zoom: 10,
+
+      center: myLatlng,
+
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+
+    }
+
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  }
+
+
+
+  function centerAt(latitude, longitude){
+    myLatlng = new google.maps.LatLng(latitude,longitude);
+    map.panTo(myLatlng);
+  }
+  
+  function setPickSites(nSelectedPaymentType,version){
+  	var gpsData;
+  	selectedSite = nSelectedPaymentType;
+  	androidVerion = version;
+    if (window.android){
+	  gpsData =window.android.getPickSitesInfo();
+	  
+    }
+    var pickSitesGeoPoint = new Array();
+    gpsData = eval('(' + gpsData + ')');
+
+	
+	window.setTimeout(function(){setupOfficeMarkers(gpsData.PickSites)}, 50);
+
+  }
+  //add by 2011/7/6 ------------------------------------------------------------------------------
+     function setupOfficeMarkers(pickSitesDate) {
+     infowindow = new google.maps.InfoWindow();//创建一个提示框，变量必须全局变量，否则函数无法使用
+	
+
+	
+      var markers = [];
+      var icon = 'bluemarker.png';
+      var i=0;
+      var length = pickSitesDate.length;
+      var centerlen = Math.floor(length/2);
+      
+  	  centerAt(pickSitesDate[centerlen].laty,pickSitesDate[centerlen].lngx);
+      for (;i<length;i++){
+      	  
+      	  var x = pickSitesDate[i];
+          var posn = new  google.maps.LatLng(x.laty,x.lngx);
+         createMarker(posn, x.Name, icon, i,x);
+      }
+    
+    }
+
+    function createMarker(point, title, icon, layerNum,info) {
+      var marker
+      if(selectedSite==layerNum&&androidVerion>4){
+      		marker= new google.maps.Marker({ position: point,title: title,icon:icon,map: map});
+      		currentMarker = marker;
+      }else{
+       marker= new google.maps.Marker({ position: point,title: title,map: map});
+      }
+      var html = "<font color='#0000ff'>自提点地址: </font><br/>" +info.Address;
+      html += " <input name='Button1' type='button'  value='确定' onclick='getDirTo(" + layerNum + ")'/>";
+     
+     
+      google.maps.event.addListener(marker, "click", function () {
+    	//infowindow.setContent(html);//设置提示框内容
+		//infowindow.open(map,marker);//地图上展现，对应关闭：infowindow.close();
+		infoBubble2.setContent(html);
+		infoBubble2.open(map,marker);
+		if(androidVerion>4){
+			var icon = 'bluemarker.png';
+			marker.setIcon(icon);
+		}
+		if(marker.postion !=currentMarker.position){
+			if(androidVerion>4){
+				icon = "defalt_marker.png";
+				currentMarker.setIcon(icon);
+			}
+			currentMarker = marker;
+			
+		}
+		
+      });
+      
+      return marker;
+    }
+
+    function getDirTo(position) {
+		if(window.android){
+			window.android.pickSitesSelected(position);
+		}  
+    }
+    //end-----------------------------------------------------------------
+  
+  
+  
+  
+  
+  /***
+  *在地图上画线
+  * gpsData　地图数据
+  *pickSiteType　站点类型
+  *driverFlag　　画线类型
+  **/
+  function setPath(gpsData,pickSiteType,driverFlag){
+    gpsData =gpsData.gps
+    
+    var flightPlanCoordinates  = new Array();
+    var x;
+    var myLatLng;
+    var j =0;
+    for (;j<gpsData.length;j++)
+	{
+		x = gpsData[j];
+		myLatLng = new google.maps.LatLng(x.lat,x.lng);
+		flightPlanCoordinates[j] = myLatLng;
+	
+	}
+	var pathColor ;//画笔颜色
+	if(driverFlag==0){//画实现
+		pathColor="#FF0000";
+	}else{
+		pathColor="#0000FF";
+	}
+	
+    var flightPath = new google.maps.Polyline({
+      path: flightPlanCoordinates,
+      strokeColor: pathColor,
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+	
+   flightPath.setMap(map);
+   
+   //set marker 
+   infowindow = new google.maps.InfoWindow();//创建一个提示框，变量必须全局变量，否则函数无法使用
+
+   var markersPos = [];
+   markersPos[0] = new google.maps.LatLng(gpsData[0].lat,gpsData[0].lng);
+  var length = gpsData.length;
+   centerAt(gpsData[0].lat,gpsData[0].lng);
+	
+	markersPos[1] = new google.maps.LatLng(gpsData[length-1].lat,gpsData[length-1].lng);
+    if(pickSiteType==8||pickSiteType==4){
+    	if(driverFlag==1){//判断是否为虚线，如果为虚线的话就把虚线去掉，重新再画能免重复
+    		
+    		if(ckToPszLines!=null){
+    			 map.removeOverlay(ckToPszLines);
+				 if(carMovedMarker!=null){
+					var icon = "order_baoguo.gif";
+					carMovedMarker=new google.maps.Marker({icon:icon,map: map});
+					Goodmoving(flightPlanCoordinates,600);
+				 }
+    		}else{
+    			var html =ckHtml;
+    			var image = "order_cangku.png";
+    			setPickSitesListener(markersPos[0],image,html);
+    			var html2;
+    				 html2 =pszhHtml;
+    				 image ="order_zhandian.png";
+    		setPickSitesListener(markersPos[1],image,html2);
+    		}
+    		ckToPszLines = flightPath;
+    	}else{
+    			var html =ckHtml;
+    			var image = "order_cangku.png";
+    			setPickSitesListener(markersPos[0],image,html);
+    			var html2;
+    			
+    			 html2 = pszhHtml;
+    			image ="order_zhandian.png";
+    			setPickSitesListener(markersPos[1],image,html2);
+    	}
+    
+     	
+   	}else{
+   		if(driverFlag==1){//判断是否为虚线，如果为虚线的话就把虚线去掉，重新再画能免重复
+    		if(pszToCustomerLines!=null){
+    			 map.removeOverlay(pszToCustomerLines);
+    			 
+    	}else{
+    		var html = customerHtml;
+    		var image = "order_kehu.png";
+    		setPickSitesListener(markersPos[1],image,html);
+    	}
+    		pszToCustomerLines = flightPath;
+    	}else{
+    		var html =customerHtml;
+    		var image = "order_kehu.png";
+    		setPickSitesListener(markersPos[1],image,html);
+    	}
+   		
+   	}
+   
+   }
+  function setPickSitesListener(myLatLng,image,content){
+   var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+    });
+   	google.maps.event.addListener(marker, "click", function () {
+    	//infowindow.setContent(html);//设置提示框内容
+		//infowindow.open(map,beachMarker2);//地图上展现，对应关闭：infowindow.close();
+		infoBubble2.setContent("<div>"+content+"</div>");
+		infoBubble2.open(map,marker);
+      });
+   }
+
+   //初始化订单的基本信息
+   function setOrderInfo(jsonStr){
+  	 var jsonObj = jsonStr;
+   		//仓库显示html串
+   		ckHtml =  "<font color='#0000ff'>"+"订单编号："+" </font>" 
+   		ckHtml += jsonObj.cangku.orderid+"<br/>";
+   		//ckHtml +=  "<font color='#0000ff'>"+"订单状态："+" </font>" 
+   		//ckHtml += jsonObj.cangku.orderid+"<br/>";
+   		ckHtml +=  "<font color='#0000ff'>"+"配送中心："+" </font>" 
+   		ckHtml += jsonObj.cangku.name+"<br/>";
+   		ckHtml +=  "<font color='#0000ff'>"+"地址："+" </font><br/>" 
+   		ckHtml += jsonObj.cangku.address+"<br/>";
+
+   		//客户家里显示html串
+   		pszhHtml =  "<font color='#0000ff'>"+"订单编号："+" </font>" 
+   		pszhHtml += jsonObj.zhandian.orderid+"<br/>";
+   		//pszhHtml +=  "<font color='#0000ff'>"+"订单状态："+" </font>" 
+   		//pszhHtml += jsonObj.cangku.orderid+"<br/>";
+   		pszhHtml +=  "<font color='#0000ff'>"+"站点名称："+" </font>" 
+   		pszhHtml += jsonObj.zhandian.name+"<br/>";
+   		pszhHtml +=  "<font color='#0000ff'>"+"站点地址："+" </font><br/>" 
+   		pszhHtml += jsonObj.zhandian.address+"<br/>";
+   		
+   		if(jsonObj.zhandian.type==4){
+   		   		//客户家里显示html串
+   		customerHtml =  "<font color='#0000ff'>"+"订单编号："+" </font>" 
+   		customerHtml += jsonObj.customer.orderid+"<br/>";
+   		//ckHtml =  "<font color='#0000ff'>"+"订单状态："+" </font>" 
+   		//ckHtml += jsonObj.customer.orderid+"<br/>";
+   		customerHtml +=  "<font color='#0000ff'>"+"配送员："+" </font>" 
+   		customerHtml += jsonObj.psy.name+"<br/>";
+   		customerHtml +=  "<font color='#0000ff'>"+"联系电话："+" </font><br/>" 
+   		customerHtml += jsonObj.psy.telephone+"<br/>";
+   		customerHtml +=  "<font color='#0000ff'>"+"客户地址："+" </font><br/>" 
+   		customerHtml += jsonObj.customer.address+"<br/>";
+   		}
+   		
+   		
+   }
+
+</script> 
+
+</head> 
+
+<body style="margin:0px; padding:0px;" onload="initialize()"> 
+
+  <div id="map_canvas" style="width:100%; height:100%"></div> 
+
+</body> 
+
+</html> 

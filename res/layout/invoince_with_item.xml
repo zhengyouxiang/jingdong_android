@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/invoince_list" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:gravity="left" android:id="@id/invoince_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginBottom="3.0dip" android:text="@string/receipt_info" />
+    <ListView android:id="@id/invoince_info_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/invoince_info" android:footerDividersEnabled="false" />
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/easybuy_list_item" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:gravity="center" android:id="@id/templete_select2" android:padding="10.0dip" android:clickable="true" android:longClickable="true" android:layout_width="40.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:button="@drawable/common_used_addr_radio" android:layout_centerVertical="true" />
+    <TextView android:ellipsize="end" android:id="@id/templete_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="test" android:singleLine="true" android:maxLength="20" android:layout_toLeftOf="@id/payment_type_detail" android:layout_toRightOf="@id/templete_select2" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/payment_type_detail" android:background="@drawable/android_list_idex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

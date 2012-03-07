@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/barcode_history_item_content" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <TextView android:textColor="@color/font_gray" android:ellipsize="end" android:gravity="right" android:id="@id/barcode_history_item_product_name" android:padding="10.0dip" android:layout_width="160.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+</LinearLayout>

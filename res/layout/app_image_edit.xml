@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageView_edit_left" android:background="@drawable/android_new_discuss_left_rotation_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:background="@drawable/android_new_discuss_gap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/imageView_edit_right" />
+    <ImageView android:id="@id/imageView_edit_right" android:background="@drawable/android_new_discuss_right_rotation_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/imageView_edit_left" />
+    <ImageView android:background="@drawable/android_new_discuss_gap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/imageView_edit_delete" />
+    <ImageView android:id="@id/imageView_edit_delete" android:background="@drawable/android_new_discuss_delete_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/imageView_edit_right" />
+</RelativeLayout>

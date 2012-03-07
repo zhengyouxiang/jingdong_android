@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/main_menu_easy" android:id="@id/menu_easy" android:title="@string/menu_easy" />
+    <item android:icon="@drawable/main_menu_search" android:id="@id/menu_search" android:title="@string/menu_search" />
+    <item android:icon="@drawable/main_menu_setup" android:id="@id/menu_setup" android:title="@string/menu_setup" />
+    <item android:icon="@drawable/main_menu_history" android:id="@id/menu_history" android:title="@string/menu_history" />
+    <item android:icon="@drawable/main_menu_feedback" android:id="@id/menu_feedback" android:title="@string/menu_feedback" />
+    <item android:icon="@drawable/main_menu_help" android:id="@id/menu_help" android:title="@string/menu_help" />
+    <item android:icon="@drawable/main_menu_about" android:id="@id/menu_about" android:title="@string/menu_about" />
+    <item android:icon="@drawable/main_menu_exit" android:id="@id/menu_exit" android:title="@string/menu_exit" />
+</menu>

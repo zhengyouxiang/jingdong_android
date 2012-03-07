@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/menu_setup_no_image_title">
+        <CheckBoxPreference android:title="@string/no_image_switch_title" android:key="@string/no_image_switch_key" android:shouldDisableView="false" android:summaryOn="@string/no_image_switch_summary_on" android:summaryOff="@string/no_image_switch_summary_off" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/menu_setup_message_title">
+        <CheckBoxPreference android:title="@string/msg_auto_update_switch_title" android:key="@string/msg_auto_update_switch_key" android:shouldDisableView="true" android:summaryOn="@string/msg_auto_update_switch_summary_on" android:summaryOff="@string/msg_auto_update_switch_summary_off" />
+        <ListPreference android:entries="@array/msg_auto_update_frequency_entry" android:title="@string/msg_auto_update_frequency_title" android:key="@string/msg_auto_update_frequency_key" android:summary="@string/msg_auto_update_frequency_summary" android:dependency="@string/msg_auto_update_switch_key" android:defaultValue="15" android:dialogTitle="@string/msg_auto_update_frequency_title" android:negativeButtonText="@string/cancel" android:entryValues="@array/msg_auto_update_frequency_value" />
+    </PreferenceCategory>
+</PreferenceScreen>

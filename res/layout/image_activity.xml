@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/image_activity_ll" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/image_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageButton android:id="@id/image_zoom_out" android:background="@drawable/none" android:padding="0.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/image_zoom_out_x" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <View android:id="@id/zoom_devide_line" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_toLeftOf="@id/image_zoom_out" android:layout_alignTop="@id/image_zoom_in" android:layout_alignBottom="@id/image_zoom_in" />
+        <ImageButton android:id="@id/image_zoom_in" android:background="@drawable/none" android:padding="0.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/image_zoom_in_x" android:adjustViewBounds="true" android:layout_toLeftOf="@id/zoom_devide_line" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <Gallery android:id="@id/image_gallery" android:background="@color/gray" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:spacing="10.0dip" />
+</LinearLayout>

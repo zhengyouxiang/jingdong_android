@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pg_post_paytype_payremark_city_arr">
+        <item>上海</item>
+        <item>北京</item>
+        <item>广州</item>
+        <item>成都</item>
+    </string-array>
+    <string-array name="pg_post_paytype_payremark_city_int_arr">
+        <item>3</item>
+        <item>6</item>
+        <item>10</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="pg_post_paytype_payremark_paymethod_arr">
+        <item>网上转帐</item>
+        <item>现金送存</item>
+        <item>柜面卡卡转存</item>
+        <item>ATM转帐</item>
+    </string-array>
+    <string-array name="pg_post_paytype_payremark_selectpayment_arr">
+        <item>邮政储蓄</item>
+        <item>邮局汇款</item>
+    </string-array>
+    <string-array name="pg_post_paytype_payremark_selectpayment_int_arr">
+        <item>205</item>
+        <item>206</item>
+    </string-array>
+    <string-array name="pg_new_feedback_contact_type">
+        <item>功能意见</item>
+        <item>界面意见</item>
+        <item>您的新需求</item>
+        <item>操作意见</item>
+        <item>流量问题</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="balance_string_array">
+        <item>使用</item>
+        <item>不使用</item>
+    </string-array>
+    <string-array name="msg_auto_update_frequency_entry">
+        <item>1分钟</item>
+        <item>5分钟</item>
+        <item>15分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+    </string-array>
+    <string-array name="msg_auto_update_frequency_value">
+        <item>1</item>
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/shoppingcart_title" layout="@layout/title" />
+    <ScrollView android:id="@id/scroll" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="13.0dip" android:layout_below="@id/shoppingcart_title" android:isScrollContainer="false">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/packs_containers" android:background="@drawable/background_corners" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="3.0dip" />
+            <LinearLayout android:id="@id/list_liear" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="vertical" android:id="@id/list_liear2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_below="@id/list_liear">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:id="@id/original_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="6.0dip" android:text="@string/orignal_price" />
+                    <TextView android:id="@id/original_price_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_toRightOf="@id/original_price" />
+                    <TextView android:gravity="center" android:id="@id/jian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="5.0dip" android:text="@string/jian" android:layout_toRightOf="@id/original_price_content" />
+                    <TextView android:id="@id/fan_xian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:text="@string/fan_xian2" android:layout_toRightOf="@id/jian" />
+                    <TextView android:id="@id/fan_xian_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_toRightOf="@id/fan_xian" />
+                    <TextView android:id="@id/shopping_cart_total_cost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="160.0dip" android:layout_marginTop="6.0dip" android:text="@string/total_cost" android:layout_below="@id/original_price" style="@style/text_color_black" />
+                    <TextView android:textColor="@color/red" android:id="@id/shopping_cart_total_cost_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:layout_toRightOf="@id/shopping_cart_total_cost" android:layout_below="@id/original_price_content" />
+                    <Button android:textColor="#ff000000" android:gravity="center" android:id="@id/settle_accounts" android:background="@drawable/android_big_button_x" android:padding="0.0dip" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/settle_accounts" android:layout_below="@id/shopping_cart_total_cost_content" android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

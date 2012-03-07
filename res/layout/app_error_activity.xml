@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:id="@id/relativeLayout_error_activity" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ffffffff" android:id="@id/textView_msg_error" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/app_error_tag_des" />
+    <CheckBox android:textColor="#ffffffff" android:id="@id/checkBox_restart_error" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/app_error_checkbox" android:layout_below="@id/editText_text_error" android:layout_alignLeft="@id/editText_text_error" />
+    <EditText android:id="@id/editText_text_error" android:paddingLeft="20.0sp" android:saveEnabled="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:hint="@string/app_error_tag_hint" android:maxLines="5" android:minLines="3" android:maxLength="500" android:layout_below="@id/textView_msg_error" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout_button_error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/checkBox_restart_error">
+        <Button android:id="@id/button_submit_error" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/app_error_submit" android:layout_weight="1.0" />
+        <Button android:id="@id/button_cancel_error" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/app_error_close" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

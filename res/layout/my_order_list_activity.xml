@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/order_time_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0" android:layout_below="@id/common_title" android:onClick="handlerClick">
+        <Button android:id="@id/my_order_one_month_orders" android:background="@xml/persional_order_btn_one_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pg_my_order_one_month" android:layout_weight="50.0" android:onClick="handlerClick" style="@style/text_color_black" />
+        <View android:saveEnabled="false" style="@style/line_vertical" />
+        <Button android:id="@id/my_order_pre_month_orders" android:background="@xml/persional_order_btn_one_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pg_my_order_pre_month" android:layout_weight="50.0" android:onClick="handlerClick" style="@style/text_color_black" />
+    </LinearLayout>
+    <ListView android:id="@id/my_order_list_pre_month" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:layout_below="@id/order_time_btn" android:fadeScrollbars="true" />
+    <ListView android:id="@id/my_order_list_one_month" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:layout_below="@id/order_time_btn" android:fadeScrollbars="true" />
+</RelativeLayout>

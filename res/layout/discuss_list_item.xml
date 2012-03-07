@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/order_comment_list_item" android:layout_width="fill_parent" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0dip" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/orderCommentTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="10.0dip" android:lines="2" android:layout_toLeftOf="@id/index_icon1" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff000000" android:id="@id/orderCommentCreationTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/orderCommentTitle" android:layout_alignLeft="@id/orderCommentTitle" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff000000" android:id="@id/orderCommentReplyCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="22.0dip" android:layout_below="@id/orderCommentTitle" android:layout_alignRight="@id/orderCommentTitle" />
+    <ImageView android:id="@id/index_icon1" android:background="@drawable/android_list_idex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

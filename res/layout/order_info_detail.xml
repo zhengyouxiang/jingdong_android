@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/common_title">
+        <LinearLayout android:orientation="vertical" android:id="@id/order_info_content" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/info1" android:background="@drawable/background_corners" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/info2" android:background="@drawable/background_corners" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/info3" android:background="@drawable/background_corners" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/info4" android:background="@drawable/background_corners" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <LinearLayout android:orientation="vertical" android:id="@id/info5" android:background="@drawable/background_corners" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <LinearLayout android:id="@id/product_of_order" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_below="@id/info4">
+                <ListView android:id="@id/order_product_list" android:background="@drawable/background_corners" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="#ffcccccc" android:dividerHeight="1.0dip" android:minHeight="200.0dip" android:layout_alignParentTop="true" android:footerDividersEnabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

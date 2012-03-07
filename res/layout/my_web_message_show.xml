@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" android:layout_alignParentTop="true" layout="@layout/title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/common_title" android:fadeScrollbars="true">
+        <RelativeLayout android:id="@id/header" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/header">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="16.0dip" android:textStyle="bold" android:id="@id/order_number" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="16.0dip" android:textStyle="bold" android:gravity="right" android:layout_gravity="right" android:id="@id/order_create_time" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View style="@style/line1" />
+                <TextView android:id="@id/message_body" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <LinearLayout android:orientation="vertical" android:id="@id/question_block" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/android_gallery_select_arrow" />
+                    <TextView android:id="@id/message_body_question" android:background="@drawable/crazy_content_bg" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" />
+                </LinearLayout>
+                <View style="@style/line1" />
+                <TextView android:id="@id/message_item_detail" android:background="@drawable/android_list_row_bg" android:padding="10.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pg_show_message_order_detail" android:drawableRight="@drawable/android_list_idex" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

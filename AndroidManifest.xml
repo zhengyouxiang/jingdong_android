@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="10" android:versionName="1.0.6" package="com.jindong.app.mall"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@android:style/Theme.Light.NoTitleBar" android:label="@string/app_name" android:icon="@drawable/jd_buy_icon" android:name=".MyApplication">
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ErrorActivity" android:process=":error" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".home.HomeActivity" android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".personel.PersonelActivity" />
+        <activity android:name=".personel.MyOrderListActivity" />
+        <activity android:name=".personel.CheckMyOrderDetail" />
+        <activity android:name=".personel.MyOrderDetailActivity" />
+        <activity android:name=".personel.MyCollectActivity" />
+        <activity android:name=".personel.MyCommentDiscussActivity" />
+        <activity android:name=".personel.MakeNewDiscuss" />
+        <activity android:name=".personel.MakeNewComments" />
+        <activity android:name=".personel.MakeNewBuyAsk" />
+        <activity android:name=".personel.MyWebMessage" />
+        <activity android:name=".personel.MyMessageShow" />
+        <activity android:name=".jdnews.JdNewsListActivity" />
+        <activity android:name=".jdnews.JdNewsDetailActivity" />
+        <activity android:name=".category.CategoryActivity" />
+        <activity android:name=".product.ProductFilterActivity" />
+        <activity android:name=".product.ProductListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".product.CommercialRuleActivity" />
+        <activity android:name=".product.ProductDetailActivity" />
+        <activity android:name=".product.ImageActivity" />
+        <activity android:name=".product.ProductDetailInfoActivity" />
+        <activity android:name=".product.CommentListActivity" />
+        <activity android:name=".product.BuyAskListActivity" />
+        <activity android:name=".product.DiscussListActivity" />
+        <activity android:name=".product.DiscussDetailActivity" />
+        <activity android:name=".shopping.ShoppingCarActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.FillOrderActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.NewOrderAddressActivity" />
+        <activity android:name=".shopping.ModifyOrderAddr" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.ReceiptInfoEditActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.SelectPaymentType" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.EditYouHuiLipinActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.CompleteOrderActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.EasyGoAddrListActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.PacksListActivity" android:screenOrientation="portrait" />
+        <activity android:name=".shopping.EmptyActivity" android:screenOrientation="portrait" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".more.FeedbackActivity" />
+        <activity android:name=".more.HistoryListActivity" />
+        <activity android:name=".more.HelpActivity" />
+        <activity android:name=".more.SearchActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".more.SettingActivity" android:screenOrientation="portrait" />
+        <activity android:name=".more.AboutActivity" />
+        <activity android:name=".barcode.BarcodeActivity" />
+        <activity android:name=".personel.MyOrderPostPayConfirm" />
+        <activity android:name=".barcode.BarcodeInputActivity" android:screenOrientation="portrait" />
+        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="com.jindong.lib.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".barcode.BarcodeProductListActivity" />
+        <activity android:name=".open.InterfaceActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="openApp.jdMobile" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".broadcastReceiver.InterfaceBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.360buy.interfaceBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".widget.JdWidget" android:process=":service">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider" />
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="jd_widget_update_action" />
+            </intent-filter>
+        </receiver>
+        <service android:label="@string/pull_service_title" android:name=".service.MessagePullService" android:process=":service" />
+    </application>
+    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="7" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+</manifest>

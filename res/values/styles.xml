@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="layout_title">
+        <item name="android:textSize">15.0dip</item>
+        <item name="android:textColor">#ffffffcc</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="common_button">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/android_big_button_x</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="spinner_left">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:background">@drawable/android_spinner_lef_x</item>
+        <item name="android:paddingTop">0.0dip</item>
+        <item name="android:paddingBottom">0.0dip</item>
+    </style>
+    <style name="title_right_button">
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:background">@drawable/right_title_btn</item>
+        <item name="android:layout_width">80.0dip</item>
+    </style>
+    <style name="text_color_black">
+        <item name="android:textColor">#ff000000</item>
+    </style>
+    <style name="edit_text">
+        <item name="android:background">@drawable/edit_text_x</item>
+    </style>
+    <style name="line1">
+        <item name="android:background">#ffcccccc</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0dip</item>
+    </style>
+    <style name="line_vertical">
+        <item name="android:background">#ffcccccc</item>
+        <item name="android:layout_width">1.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    <style name="product_detail_navigation">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/android_product_info_little4_x</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/none</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="persiona_product">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@xml/persional_crazy</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/none</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="product_detail_loading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">100.0dip</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="product_list_sort_button">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">0.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@drawable/none</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="general_padding">
+        <item name="android:padding">10.0dip</item>
+    </style>
+    <style name="yellowStarRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:maxHeight">20.0dip</item>
+        <item name="android:progressDrawable">@drawable/yellow_star_rating_bar_full</item>
+        <item name="android:minHeight">20.0dip</item>
+    </style>
+</resources>

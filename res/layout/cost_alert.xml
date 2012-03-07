@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0dip" android:textColor="#ffffffff" android:id="@id/dialog_message_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="15.0dip" android:text="@string/cost_hint_message" />
+    <CheckBox android:textColor="#ffffffff" android:id="@id/not_show_again" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:button="@drawable/login_remember" android:text="@string/no_show_again" />
+</LinearLayout>

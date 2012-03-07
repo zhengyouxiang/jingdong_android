@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <LinearLayout android:id="@id/comment_list_score_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/common_title">
+        <RadioGroup android:orientation="horizontal" android:id="@id/product_comments" android:layout_width="fill_parent" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <RadioButton android:id="@id/product_comment_all" style="@style/product_detail_navigation" />
+            <View style="@style/line_vertical" />
+            <RadioButton android:id="@id/product_comment_good" style="@style/product_detail_navigation" />
+            <View style="@style/line_vertical" />
+            <RadioButton android:id="@id/product_comment_center" style="@style/product_detail_navigation" />
+            <View style="@style/line_vertical" />
+            <RadioButton android:id="@id/product_comment_bad" style="@style/product_detail_navigation" />
+        </RadioGroup>
+    </LinearLayout>
+    <ListView android:id="@id/comment_list_content_all" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffe6e6e6" android:dividerHeight="1.0dip" android:layout_below="@id/comment_list_score_buttons" android:fadeScrollbars="true" />
+    <ListView android:id="@id/comment_list_content_good" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffe6e6e6" android:dividerHeight="1.0dip" android:layout_below="@id/comment_list_score_buttons" android:fadeScrollbars="true" />
+    <ListView android:id="@id/comment_list_content_middle" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffe6e6e6" android:dividerHeight="1.0dip" android:layout_below="@id/comment_list_score_buttons" android:fadeScrollbars="true" />
+    <ListView android:id="@id/comment_list_content_bad" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffe6e6e6" android:dividerHeight="1.0dip" android:layout_below="@id/comment_list_score_buttons" android:fadeScrollbars="true" />
+</RelativeLayout>

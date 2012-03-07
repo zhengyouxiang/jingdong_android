@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/product_list_item" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/collect_product_item_image" android:background="@drawable/background_corners" android:padding="5.0dip" android:layout_width="85.0dip" android:layout_height="85.0dip" android:layout_margin="5.0dip" android:scaleType="fitCenter" />
+    <TextView android:textSize="11.0dip" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/collect_product_item_Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:lines="3" android:layout_toLeftOf="@id/product_detail" android:layout_toRightOf="@id/collect_product_item_image" android:layout_alignParentTop="true" />
+    <TextView android:textColor="#ffff0033" android:id="@id/collect_product_item_jdPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/collect_product_item_Text" android:layout_alignLeft="@id/collect_product_item_Text" android:layout_alignBottom="@id/collect_product_item_image" />
+    <TextView android:id="@id/collect_product_item_martPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/collect_product_item_Text" android:layout_alignRight="@id/collect_product_item_Text" android:layout_alignBottom="@id/collect_product_item_image" />
+    <ImageView android:id="@id/product_detail" android:background="@drawable/android_list_idex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

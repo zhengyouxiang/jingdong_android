@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:gravity="top" android:orientation="vertical" android:id="@id/ataawGroup" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RadioButton android:ellipsize="end" android:id="@id/ataaw1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/common_used_addr_radio" android:text="rad1" android:maxLines="1" />
+    </RadioGroup>
+</RelativeLayout>

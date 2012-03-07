@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <ListView android:id="@id/comment_list_content_all" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="@color/gray" android:dividerHeight="1.0dip" android:layout_below="@id/common_title" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/android_title_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_gravity="center_vertical" android:id="@id/titleText" android:padding="10.0dip" android:singleLine="true" android:layout_weight="1.0" style="@style/layout_title" />
+    <Button android:layout_gravity="center_vertical" android:id="@id/titleRightButton" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" style="@style/title_right_button" />
+</LinearLayout>

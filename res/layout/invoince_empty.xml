@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/receipt_list_info" android:background="@drawable/order_list_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="left" android:id="@id/receipt_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/receipt_info" android:layout_centerVertical="true" />
+    <TextView android:gravity="left" android:id="@id/receipt_info2" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/receipt_info" android:layout_toRightOf="@id/receipt_info" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/receipt_info_detail" android:background="@drawable/android_list_idex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

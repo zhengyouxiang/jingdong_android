@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/order_you_hui_li_list2" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:gravity="left" android:id="@id/you_hui_li_info100" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/you_hui_quan_li_pin_ka" android:layout_alignParentTop="true" />
+    <ListView android:id="@id/about_money_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/you_hui_li_info100" android:footerDividersEnabled="false" />
+</RelativeLayout>

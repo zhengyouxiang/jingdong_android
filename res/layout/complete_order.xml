@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/fill_order_title" layout="@layout/title" />
+    <RelativeLayout android:id="@id/submit_info" android:background="@drawable/background_corners" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/fill_order_title">
+        <TextView android:id="@id/msg_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/order_completed" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/order_no" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/order_bumber" android:layout_below="@id/msg_hint" />
+        <TextView android:id="@id/order_no_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="test" android:layout_toRightOf="@id/order_no" android:layout_below="@id/msg_hint" />
+        <TextView android:id="@id/pay_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:text="@string/pay_money" android:layout_toRightOf="@id/order_no_content" android:layout_below="@id/msg_hint" />
+        <TextView android:id="@id/pay_money_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="test" android:layout_toRightOf="@id/pay_money" android:layout_below="@id/msg_hint" />
+        <TextView android:id="@id/pay_way" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/send_type2" android:layout_below="@id/order_no" />
+        <TextView android:id="@id/pay_way_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="test" android:layout_toRightOf="@id/pay_way" android:layout_below="@id/order_no_content" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/submit_msg" android:background="@drawable/background_corners" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/submit_info">
+        <TextView android:id="@id/pay_msg_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="test" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/submit_completed" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/submit_msg">
+        <Button android:gravity="center" android:id="@id/submit_completed_btn" android:layout_width="130.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/completed" android:layout_centerHorizontal="true" style="@style/common_button" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/report_item" android:background="@drawable/android_list_row_bg" android:paddingLeft="10.0dip" android:paddingTop="7.0dip" android:paddingRight="10.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/index_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/index_icon" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="16.0dip" android:textColor="#ff000000" android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:singleLine="true" android:layout_weight="1.0" android:layout_toRightOf="@id/index_icon" android:layout_centerVertical="true" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0dip" android:textColor="#ffffffcc" android:gravity="center" android:id="@id/get_by_self_header" android:background="@drawable/android_title_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/get_by_self" />
+    <RelativeLayout android:background="@drawable/background_corners" android:layout_width="fill_parent" android:layout_height="180.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <TextView android:textColor="#ff000000" android:ellipsize="end" android:id="@id/message_type_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:ellipsize="end" android:id="@id/message_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+        <View android:id="@id/remind_line1" android:layout_below="@id/message_type_title" style="@style/line1" />
+        <TextView android:textColor="#ff000000" android:ellipsize="end" android:id="@id/message_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:text="hello world" android:lines="3" android:layout_alignParentTop="true" />
+        <View android:id="@id/remind_line2" android:layout_below="@id/message_content" style="@style/line1" />
+        <TextView android:textColor="#ff000000" android:ellipsize="end" android:id="@id/order_remind" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="55.0dip" android:layout_marginTop="10.0dip" android:text="@string/order_info_detail" android:layout_below="@id/remind_line2" />
+        <ImageView android:id="@id/index_icon1" android:background="@drawable/android_list_idex" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

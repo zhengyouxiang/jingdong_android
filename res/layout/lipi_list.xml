@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/lip_list_view" android:padding="3.0dip" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/li_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <TextView android:id="@id/left_li_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/left_balance" android:layout_toRightOf="@id/li_value" android:layout_centerVertical="true" />
+    <TextView android:id="@id/left_li_money_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:text="50" android:layout_toRightOf="@id/left_li_money" android:layout_centerVertical="true" />
+    <TextView android:id="@id/li_end_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:layout_toLeftOf="@id/hui_end_time_name" android:layout_centerVertical="true" />
+    <TextView android:id="@id/hui_end_time_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:text="到期" android:layout_toLeftOf="@id/jing_select" android:layout_centerVertical="true" />
+    <CheckBox android:id="@id/jing_select" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:button="@drawable/login_remember" android:layout_alignParentRight="true" />
+</RelativeLayout>

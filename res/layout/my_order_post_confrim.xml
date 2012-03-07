@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/common_title" android:fadeScrollbars="true">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:id="@id/pg_post_paytype_confirm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/pg_post_paytype_confirm" android:layout_alignParentTop="true" />
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_confirm_paycity" android:singleLine="true" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:gravity="center_vertical" android:id="@id/post_pay_city_choosed_type" android:paddingLeft="5.0dip" android:layout_width="140.0dip" android:layout_height="wrap_content" android:hint="@string/pg_new_feedback_type_text_hint" style="@style/spinner_left" />
+                    <ImageButton android:id="@id/post_pay_city_choosed_type_btn" android:background="@drawable/android_spinner_right_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_selectpayment" android:singleLine="true" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:gravity="center_vertical" android:id="@id/post_pay_selectpayment" android:paddingLeft="5.0dip" android:layout_width="140.0dip" android:layout_height="wrap_content" android:hint="@string/pg_new_feedback_type_text_hint" style="@style/spinner_left" />
+                    <ImageButton android:id="@id/post_pay_choosed_type_btn" android:background="@drawable/android_spinner_right_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_paydate" android:singleLine="true" />
+                <TextView android:textSize="15.0sp" android:gravity="center_vertical" android:id="@id/order_post_pay_paydate" android:background="@drawable/edit_text_x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:minWidth="180.0dip" android:singleLine="true" android:inputType="none" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_payorderid" android:singleLine="true" />
+                <EditText android:textSize="15.0sp" android:id="@id/order_post_pay_payorderid" android:background="@drawable/edit_text_x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:minWidth="180.0dip" android:hint="@string/pg_post_paytype_payorderid_hint" android:lines="1" android:singleLine="true" android:inputType="number" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_paymethod" android:singleLine="true" />
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:gravity="center_vertical" android:id="@id/order_post_pay_paymethod" android:paddingLeft="5.0dip" android:layout_width="140.0dip" android:layout_height="wrap_content" android:hint="@string/pg_new_feedback_type_text_hint" style="@style/spinner_left" />
+                    <ImageButton android:id="@id/order_post_pay_paymethod_btn" android:background="@drawable/android_spinner_right_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_bankname" android:singleLine="true" />
+                <EditText android:textSize="15.0sp" android:id="@id/order_post_pay_bankname" android:background="@drawable/edit_text_x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:minWidth="180.0dip" android:hint="@string/pg_post_paytype_bankname_hint" android:singleLine="true" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="130.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_paymoney" android:singleLine="true" />
+                <EditText android:textSize="15.0sp" android:id="@id/order_post_pay_paymoney" android:background="@drawable/edit_text_x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:minWidth="180.0dip" android:hint="@string/pg_post_paytype_paymoney_hint" android:lines="1" android:singleLine="true" android:inputType="numberDecimal" />
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/line1" />
+            <LinearLayout android:gravity="center_vertical" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="100.0">
+                <TextView android:textSize="15.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="120.0dip" android:minWidth="110.0dip" android:text="@string/pg_post_paytype_payremark" android:singleLine="true" />
+                <EditText android:textSize="15.0sp" android:id="@id/order_post_pay_payremark" android:background="@drawable/edit_text_x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:minWidth="180.0dip" android:hint="@string/pg_post_paytype_payremark_hint" android:lines="1" android:singleLine="true" />
+            </LinearLayout>
+            <Button android:textSize="20.0sp" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/post_pay_confrim_btn" android:layout_width="180.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="20.0dip" android:adjustViewBounds="true" android:text="@string/pg_make_new_comment_submit" android:layout_below="@id/show_password" style="@style/common_button" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/jing_quan_list_view" android:padding="3.0dip" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/hui_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="test" android:layout_centerVertical="true" />
+    <TextView android:id="@id/hui_end_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/hui_end_time_name" android:layout_centerVertical="true" />
+    <TextView android:id="@id/hui_end_time_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="到期" android:layout_toLeftOf="@id/jing_select1" android:layout_centerVertical="true" />
+    <CheckBox android:id="@id/jing_select1" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:button="@drawable/login_remember" android:layout_alignParentRight="true" />
+</RelativeLayout>

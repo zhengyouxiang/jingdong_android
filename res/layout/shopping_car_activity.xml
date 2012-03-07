@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <ListView android:id="@id/shopping_car_List" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:cacheColorHint="#00000000" android:divider="#ffccccff" android:dividerHeight="1.0px" android:layout_below="@id/common_title" android:fadeScrollbars="true" />
+    <TextView android:id="@id/shopping_car_moneyText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="共计:  ¥" android:layout_toLeftOf="@id/shopping_car__Money" android:layout_below="@id/shopping_car_List" />
+    <TextView android:id="@id/shopping_car__Money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="50.0dip" android:layout_below="@id/shopping_car_List" android:layout_alignParentRight="true" />
+</RelativeLayout>

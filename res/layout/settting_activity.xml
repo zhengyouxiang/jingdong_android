@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <RelativeLayout android:id="@id/msg_update_nofity_switch" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/common_title">
+        <TextView android:textSize="24.0dip" android:id="@id/switch_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_auto_update_switch_title" android:layout_alignParentTop="true" />
+        <TextView android:id="@id/switch_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_auto_update_switch_summary_on" android:layout_below="@id/frequency_title" />
+        <CheckBox android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/msg_update_nofity_switch">
+        <TextView android:textSize="24.0dip" android:id="@id/frequency_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_auto_update_frequency_title" android:layout_alignParentTop="true" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_auto_update_frequency_title" android:layout_below="@id/frequency_title" />
+        <CheckBox android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</RelativeLayout>

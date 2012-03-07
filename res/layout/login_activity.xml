@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/android_layout_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/common_title" layout="@layout/title" />
+    <ScrollView android:id="@id/regist_scroller" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/common_title">
+        <RelativeLayout android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/login_page_input_name" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:text="@string/user_name" />
+            <EditText android:id="@id/login_input_name" android:background="@drawable/edit_text_x" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/register_name_hint" android:singleLine="true" android:layout_toRightOf="@id/login_page_input_name" android:layout_alignTop="@id/login_page_input_name" />
+            <TextView android:id="@id/login_page_input_password" android:paddingTop="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="25.0dip" android:text="@string/user_password" android:layout_below="@id/login_page_input_name" />
+            <EditText android:id="@id/login_input_password" android:background="@drawable/edit_text_x" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/register_first_password" android:password="true" android:singleLine="true" android:layout_toRightOf="@id/login_page_input_password" android:layout_below="@id/login_input_name" android:layout_alignLeft="@id/login_input_name" android:layout_alignTop="@id/login_page_input_password" />
+            <CheckBox android:id="@id/remember_user" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:button="@drawable/login_remember" android:text="@string/remember_user" android:layout_below="@id/login_input_password" android:layout_alignLeft="@id/login_input_password" />
+            <Button android:textSize="20.0sp" android:id="@id/login_comfirm_button" android:layout_width="163.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:text="@string/login" android:layout_below="@id/remember_user" style="@style/common_button" />
+            <Button android:textSize="20.0sp" android:id="@id/register_link" android:layout_width="127.0dip" android:layout_marginLeft="5.0dip" android:layout_marginTop="15.0dip" android:text="@string/register" android:layout_toRightOf="@id/login_comfirm_button" android:layout_below="@id/remember_user" style="@style/common_button" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
